@@ -12,7 +12,7 @@ function validateInput(testInput) {
 } 
 
 // formSubmission function here - requirements say template literals so BE SURE TO USE BACKTICKS not regular
-function formSubmission (document, list, pilot, copilot, fuelLevel, cargoLevel) {
+function formSubmission (document, list, pilot, copilot, fuelLevel, cargoMass) {
     const pilotStatus = document.getElementByID("pilotStatus");
     const copilotStatus = document.getElementByID("copilotStatus");
     const fuelStatus = document.getElementByID("fuelStatus");
@@ -33,23 +33,25 @@ function formSubmission (document, list, pilot, copilot, fuelLevel, cargoLevel) 
         list.style.visibility = "hidden";
      }
 
-     if (cargoLevel >= 10000) {
-        cargoLevel.innerHTML = "Cargo Mass too high for launch";
+     if (cargoMass >= 10000) {
+        cargoMass.innerHTML = "Cargo Mass too high for launch";
         list.style.visibility = "visible";
         launchStatus.innerHTML = "Shuttle not ready for launch";
         launchStatus.style.color= "C7254E";
      } else{
-        cargoLevel.innerHTML = "Cargo mass low enough for launch";
+        cargoMass.innerHTML = "Cargo mass low enough for launch";
         list.style.visibility = "hidden";
      }
 
-     if (fuelLevel >= 10000 && cargoLevel <=10000) {
+     if (fuelLevel >= 10000 && cargoMass <=10000) {
         launchStatus.innerHTML = "Shuttle is ready for launch";
         launchStatus.style.color = "#419F6A";
         list.style.visibility = "hidden";
      }
 }
 
+
+// Ask for help in how to attach to the Json provided.  this is a placeholder name"
 async function myFetch() {
     let planetsResponse = await fetch("planetary_data.json");
     return planetsResponse.json();

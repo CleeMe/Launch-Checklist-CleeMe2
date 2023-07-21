@@ -27,13 +27,13 @@ const list = document.getElementById("faultyItems");
 list.style.visibility = "hidden";
 const formSubmitButton - this.document.getElementById("formSubmit");
 
-let form = document.querySelector("form");
-form.addEventListener("submit", function (event) {
+
+formSubmitButton.addEventListener("click", function (event) {
     event.preventDefault();
-    let pilotInput = document.querySelector("input[name=pilotName]");
-    let copilotInput = document.querySelector("input[name=copilotName]");
-    let fuelLevelInput = document.querySelector("input[name=fuelLevel]");
-    let cargoMassInput = document.querySelector("input[name=cargoMass]");
+    let pilotInput = document.querySelector("input[name=pilotName]").value;
+    let copilotInput = document.querySelector("input[name=copilotName]".value);
+    let fuelLevelInput = Number(document.querySelector("input[name=fuelLevel]").value);
+    let cargoMassInput = Number(document.querySelector("input[name=cargoMass]").value);
 
 formSubmission(document, faultyItemsList, pilotInput.value, copilotInput.value, 
     fuelLevelInput.value, cargoMassInput.value);

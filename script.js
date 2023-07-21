@@ -2,20 +2,31 @@
 
 window.addEventListener("load", function () {
 
-    // let listedPlanets;
-    // // Set listedPlanetsResponse equal to the value returned by calling myFetch()
-    // let listedPlanetsResponse;
-    // listedPlanetsResponse.then(function (result) {
-    //     listedPlanets = result;
-    //     console.log(listedPlanets);
-    // }).then(function () {
-    //     console.log(listedPlanets);
-    //     // Below this comment call the appropriate helper functions to pick a planet fom the list of planets and add that information to your destination.
-    // })
+    let listedPlanets;
+ // Set listedPlanetsResponse equal to the value returned by calling myFetch()
+    let listedPlanetsResponse = myFetch();
+    listedPlanetsResponse.then(function (result) {
+        listedPlanets = result;
+        console.log(listedPlanets);
+    }).then(function () {
+    let selectedPlanet = pickPlanet(listedPlanets);
+    
+addDestinationInfo(
+    document,
+    selectedPlanet.name, 
+    selectedPlanet.diameter, 
+    selectedPlanet.star, 
+    selectedPlanet.distance, 
+    selectedPlanet.moons, 
+    selectedPlanet.image, 
+);
+    });
 
 
-    // set up submit so it knows what input goes to which id on the HTML Document
-//
+const list = document.getElementById("faultyItems");
+list.style.visibility = "hidden";
+const formSubmitButton - this.document.getElementById("formSubmit");
+
 let form = document.querySelector("form");
 form.addEventListener("submit", function (event) {
     event.preventDefault();
@@ -24,11 +35,11 @@ form.addEventListener("submit", function (event) {
     let fuelLevelInput = document.querySelector("input[name=fuelLevel]");
     let cargoMassInput = document.querySelector("input[name=cargoMass]");
 
-    // this part says that if the value of any of these variables are empty the alert will happen
-    if (validateInput(pilotInput.value) === "Empty" || validateInput(copilotInput.value) === "Empty" 
-    || validateInput(fuelLevelInput.value) === "Empty" || validateInput(cargoMassInput.value) === "Empty"){ 
-//    the alert for all fields to be required
-    alert ("All fields are required!");
+formSubmission(document, faultyItemsList, pilotInput.value, copilotInput.value, 
+    fuelLevelInput.value, cargoMassInput.value);
+
+
+   
     
     // used to ensure the form can not be submitted if all fields aren't filled
     

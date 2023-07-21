@@ -42,7 +42,12 @@ function formSubmission (document, list, pilot, copilot, fuelLevel, cargoLevel) 
         cargoLevel.innerHTML = "Cargo mass low enough for launch";
         list.style.visibility = "hidden";
      }
-    
+
+     if (fuelLevel >= 10000 && cargoLevel <=10000) {
+        launchStatus.innerHTML = "Shuttle is ready for launch";
+        launchStatus.style.color = "#419F6A";
+        list.style.visibility = "hidden";
+     }
 }
 
 

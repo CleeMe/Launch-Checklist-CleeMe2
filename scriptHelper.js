@@ -21,7 +21,17 @@ function formSubmission (document, list, pilot, copilot, fuelLevel, cargoLevel) 
 
     pilotStatus.innerHTML - `Pilot ${pilot}Ready`;
     copilotStatus.innerHTML - `Co-pilot ${copilot}Ready`;
-    
+
+    // now if else for the alerts and style changes code with comments in the christi safe file
+     if (fuelLevel <= 10000){
+        fuelStatus.innerHTML = "Fuel level too low for launch";
+        list.style.visibility = "visible";
+        launchStatus.innerHTML = "Shuttle not ready for launch";
+        launchStatus.style.color= "C7254E";
+     } else{
+        fuelStatus.innerHTML = "Fuel level high enough for launch";
+        list.style.visibility = "hidden";
+     }
     
 }
 

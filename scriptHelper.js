@@ -1,5 +1,21 @@
 // Write your helper functions here!
-// require('isomorphic-fetch');
+
+// ok start with validate input function - trim spaces (cause it is helpful) and use code in file/here
+function validateInput(testInput) {
+    if(testInput.trim() === "") {
+        return "Empty";
+    }else if (isNaN(testInput)){
+        return "Not a Number";
+    }else {
+        return "Is a Number";
+    }
+} 
+
+
+
+
+
+
 
 function addDestinationInfo(document, name, diameter, star, distance, moons, imageUrl) {
    // Here is the HTML formatting for our mission target div.
@@ -16,17 +32,14 @@ function addDestinationInfo(document, name, diameter, star, distance, moons, ima
    */
 }
 
-function validateInput(testInput) {
-    if(!testInput) {
-        return "Empty";
-    }
-    if (typeof testInput === "number"){
-        return "Is a Number";
-    }
-} 
 
-function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
-   
+
+function formSubmission(document, faultyItemsList, pilot, copilot, fuelLevel, cargoLevel) {
+    // this part says that if the value of any of these variables are empty the alert will happen
+    if (validateInput(pilot) === "Empty" || validateInput(copilot) === "Empty" 
+    || validateInput(fuelLevel) === "Empty" || validateInput(cargoLevel) === "Empty"){ 
+//    the alert for all fields to be required
+    alert ("All fields are required!");
 }
 
 async function myFetch() {

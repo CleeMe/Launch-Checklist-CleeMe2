@@ -51,7 +51,15 @@ function formSubmission (document, list, pilot, copilot, fuelLevel, cargoLevel) 
 }
 
 
+async function myFetch() {
+    let planetsResponse = await fetch("planetary_data.json");
+    return planetsResponse.json();
+}
 
+function pickPlanet(planets) {
+    const index= Math.floor(Math.random() *planets.length);
+    return planets[index];
+}
 
 
 
@@ -74,17 +82,7 @@ function addDestinationInfo(document, name, diameter, star, distance, moons, ima
 
 
 
-async function myFetch() {
-    let planetsReturned;
 
-    planetsReturned = await fetch().then( function(response) {
-        });
-
-    return planetsReturned;
-}
-
-function pickPlanet(planets) {
-}
 
 // module.exports.addDestinationInfo = addDestinationInfo;
 // module.exports.validateInput = validateInput;

@@ -30,38 +30,33 @@ if (validateInput(pilot) === "Empty" || validateInput(copilot)=== "Empty" || val
     cargoMass=Number(cargoMass)
     pilotStatus.innerHTML - `Pilot ${pilot}Ready`;
     copilotStatus.innerHTML - `Co-pilot ${copilot}Ready`;
-
+    list.style.visibility = "visible";
     if (fuelLevel <= 10000) {
         fuelStatus.innerHTML = "Fuel level too low for launch";
-        list.style.visibility = "visible";
         launchStatus.innerHTML = "Shuttle not ready for launch";
         launchStatus.style.color = "C7254E";
     } else {
         fuelStatus.innerHTML = "Fuel level high enough for launch";
-        list.style.visibility = "hidden";
+    
     }
 
     if (cargoMass >= 10000) {
         cargoMass.innerHTML = "Cargo Mass too high for launch";
-        list.style.visibility = "visible";
+       
         launchStatus.innerHTML = "Shuttle not ready for launch";
         launchStatus.style.color = "C7254E";
     } else {
         cargoMass.innerHTML = "Cargo mass low enough for launch";
-        list.style.visibility = "hidden";
+       
     }
 
     if (fuelLevel >= 10000 && cargoMass <= 10000) {
         launchStatus.innerHTML = "Shuttle is ready for launch";
         launchStatus.style.color = "#419F6A";
-        list.style.visibility = "hidden";
+   
     }
 }
-
 }
-
-
-    
 
 // Ask for help in how to attach to the Json provided.  this is a placeholder name"
 async function myFetch() {

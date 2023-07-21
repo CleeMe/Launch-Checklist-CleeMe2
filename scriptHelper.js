@@ -11,6 +11,19 @@ function validateInput(testInput) {
     }
 } 
 
+// formSubmittsion function here - requirements say template literals so BE SURE TO USE BACKTICKS not regular
+function formSubmission (document, list, pilot, copilot, fuelLevel, cargoLevel) {
+    const pilotStatus = document.getElementByID("pilotStatus");
+    const copilotStatus = document.getElementByID("copilotStatus");
+    const fuelStatus = document.getElementByID("fuelStatus");
+    const cargoStatus = document.getElementByID("cargoStatus");
+    const launchStatus = document.getElementByID("launchStatus");
+
+    pilotStatus.innerHTML - `Pilot ${pilot}Ready`;
+    copilotStatus.innerHTML - `Co-pilot ${copilot}Ready`;
+    
+    
+}
 
 
 
@@ -34,13 +47,7 @@ function addDestinationInfo(document, name, diameter, star, distance, moons, ima
 
 
 
-function formSubmission(document, faultyItemsList, pilot, copilot, fuelLevel, cargoLevel) {
-    // this part says that if the value of any of these variables are empty the alert will happen
-    if (validateInput(pilot) === "Empty" || validateInput(copilot) === "Empty" 
-    || validateInput(fuelLevel) === "Empty" || validateInput(cargoLevel) === "Empty"){ 
-//    the alert for all fields to be required
-    alert ("All fields are required!");
-}
+
 
 async function myFetch() {
     let planetsReturned;

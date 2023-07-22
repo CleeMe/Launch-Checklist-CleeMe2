@@ -28,8 +28,8 @@ if (validateInput(pilot) === "Empty" || validateInput(copilot)=== "Empty" || val
 } else {
     fuelLevel=Number(fuelLevel)
     cargoMass=Number(cargoMass)
-    pilotStatus.innerHTML - `Pilot ${pilot}Ready for Launch`;
-    copilotStatus.innerHTML - `Co-pilot ${copilot}Ready for Launch`;
+    pilotStatus.innerHTML - `Pilot ${pilot} is Ready for Launch`;
+    copilotStatus.innerHTML - `Co-pilot ${copilot} is Ready for Launch`;
     list.style.visibility = "visible";
     if (fuelLevel <= 10000) {
         fuelStatus.innerHTML = "Fuel level too low for launch";
@@ -41,7 +41,7 @@ if (validateInput(pilot) === "Empty" || validateInput(copilot)=== "Empty" || val
     }
 
     if (cargoMass >= 10000) {
-        cargoMass.innerHTML = "Cargo Mass too high for launch";
+        cargoMass.innerHTML = "Cargo Mass too heavy for launch";
        
         launchStatus.innerHTML = "Shuttle Not Ready for Launch";
         launchStatus.style.color = "rgb(199, 37, 78)";
@@ -51,14 +51,13 @@ if (validateInput(pilot) === "Empty" || validateInput(copilot)=== "Empty" || val
     }
 
     if (fuelLevel >= 10000 && cargoMass <= 10000) {
-        launchStatus.innerHTML = "Shuttle is ready for launch";
+        launchStatus.innerHTML = "Shuttle is Ready for Launch";
         launchStatus.style.color = "#419F6A";
    
     }
 }
 }
 
-// Ask for help in how to attach to the Json provided.  this is a placeholder name"
 async function myFetch() {
     let planetsResponse = await fetch("https://handlers.education.launchcode.org/static/planets.json");
     return planetsResponse.json();

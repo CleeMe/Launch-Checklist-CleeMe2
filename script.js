@@ -2,13 +2,13 @@
 
 
 window.addEventListener("load", function () {
-    let pilotInput = document.querySelector("input[name=pilotName]");
-  
-        let copilotInput = document.querySelector("input[name=copilotName]");
-      
-        let fuelLevelInput =(document.querySelector("input[name=fuelLevel]"));
-       
-        let cargoMassInput = (document.querySelector("input[name=cargoMass]"));
+    let pilotInput = document.querySelector("input[name=pilotName]").value;
+
+        let copilotInput = document.querySelector("input[name=copilotName]").value;
+
+        let fuelLevelInput =(document.querySelector("input[name=fuelLevel]")).value;
+     
+        let cargoMassInput = (document.querySelector("input[name=cargoMass]")).value;
      
 
 
@@ -19,7 +19,7 @@ window.addEventListener("load", function () {
     formSubmitButton.addEventListener("click", function (event) {
         event.preventDefault();
    
-            formSubmission(document, list, pilot, copilot, fuelLevel, cargoMass);
+            formSubmission(document, list, pilotInput, copilotInput, fuelLevelInput, cargoMassInput);
             let listedPlanets;
             let listedPlanetsResponse = myFetch();
             listedPlanetsResponse.then(function (result) {
@@ -33,7 +33,7 @@ window.addEventListener("load", function () {
                 addDestinationInfo(document, selectedPlanet.name, selectedPlanet.diameter, selectedPlanet.star, 
                     selectedPlanet.distance, selectedPlanet.moons, selectedPlanet.image,);
 
-                    console.log(pilotInput.value)
+                    // console.log(pilotInput.value)
             }); 
            
         }

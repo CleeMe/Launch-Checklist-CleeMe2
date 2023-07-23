@@ -19,10 +19,10 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoMass) {
     const cargoStatus = document.getElementById("cargoStatus");
     const launchStatus = document.getElementById("launchStatus");
 
-if (validateInput(pilotInput.value) === "Empty" || validateInput(copilotInput.value)=== "Empty" || validateInput(fuelLevelInput.value)=== "Empty" ||
-         validateInput(cargoMassInput.value)=== "Empty")  {
+if (validateInput(pilot) === "Empty" || validateInput(copilot)=== "Empty" || validateInput(fuelLevel)=== "Empty" ||
+         validateInput(cargoMass)=== "Empty")  {
     alert("All fields must be filled.");
-} else if (validateInput(fuelLevelInput.value) === "Not a Number" || validateInput(cargoMassInput.value) === "Not a Number") {
+} else if (validateInput(fuelLevel) === "Not a Number" || validateInput(cargoMassInput) === "Not a Number") {
     alert ("Please enter a number");
 
 } else {

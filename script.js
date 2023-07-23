@@ -25,6 +25,8 @@ window.addEventListener("load", function () {
 
                 addDestinationInfo(document, selectedPlanet.name, selectedPlanet.diameter, selectedPlanet.star, 
                     selectedPlanet.distance, selectedPlanet.moons, selectedPlanet.image,);
+
+                    console.log(pilotInput.value)
             }); 
            
         }

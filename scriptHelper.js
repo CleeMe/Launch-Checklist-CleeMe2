@@ -28,10 +28,10 @@ if (validateInput(pilot) === "Empty" || validateInput(copilot)=== "Empty" || val
 } else {
     fuelLevel=Number(fuelLevel)
     cargoMass=Number(cargoMass)
-    pilotStatus.innerHTML - `Pilot ${pilot} is Ready for Launch`;
-    copilotStatus.innerHTML - `Co-pilot ${copilot} is Ready for Launch`;
+    pilotStatus.innerHTML - `Pilot ${pilot} is ready for launch`;
+    copilotStatus.innerHTML - `Co-pilot ${copilot} is ready for launch`;
     list.style.visibility = "visible";
-    if (fuelLevel <= 10000) {
+    if (fuelLevel < 10000) {
         fuelStatus.innerHTML = "Fuel level too low for launch";
         launchStatus.innerHTML = "Shuttle Not Ready for Launch";
         launchStatus.style.color = "rgb(199, 37, 78)";
@@ -40,7 +40,7 @@ if (validateInput(pilot) === "Empty" || validateInput(copilot)=== "Empty" || val
     
     }
 
-    if (cargoMass >= 10000) {
+    if (cargoMass > 10000) {
         cargoMass.innerHTML = "Cargo Mass too heavy for launch";
        
         launchStatus.innerHTML = "Shuttle Not Ready for Launch";

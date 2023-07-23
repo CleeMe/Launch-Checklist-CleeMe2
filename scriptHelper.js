@@ -28,8 +28,8 @@ if (validateInput(pilot) === "Empty" || validateInput(copilot)=== "Empty" || val
 } else {
     fuelLevel=Number(fuelLevel)
     cargoMass=Number(cargoMass)
-    pilotStatus.innerHTML - `Pilot ${pilot} is ready for launch`;
-    copilotStatus.innerHTML - `Co-pilot ${copilot} is ready for launch`;
+    pilotStatus.innerHTML = `Pilot ${pilot} is ready for launch`;
+    copilotStatus.innerHTML = `Co-pilot ${copilot} is ready for launch`;
     list.style.visibility = "visible";
     if (fuelLevel < 10000) {
         fuelStatus.innerHTML = "Fuel level too low for launch";

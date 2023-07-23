@@ -1,9 +1,16 @@
 // Write your JavaScript code here!
+
+
 window.addEventListener("load", function () {
     let pilotInput = document.querySelector("input[name=pilotName]");
+    let pilot = pilotInput;
         let copilotInput = document.querySelector("input[name=copilotName]");
+        let copilotTinput=copilotName;
         let fuelLevelInput =(document.querySelector("input[name=fuelLevel]"));
+        let fuelLevelInput = fuelLevel;
         let cargoMassInput = (document.querySelector("input[name=cargoMass]"));
+        let cargoMassInput = cargoMass
+
 
     const list = document.getElementById("faultyItems");
     list.style.visibility = "hidden";

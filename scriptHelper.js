@@ -2,7 +2,7 @@
 
 // ok start with validate input function - trim spaces (cause it is helpful) and use code in file/here
 function validateInput(testInput) {
-    if (testInput === " ") {
+    if (testInput === "") {
         return "Empty";
     } else if (isNaN(testInput)) {
         return "Not a Number";
@@ -19,15 +19,15 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoMass) {
     const cargoStatus = document.getElementById("cargoStatus");
     const launchStatus = document.getElementById("launchStatus");
 
-if (validateInput(pilot) === "Empty" || validateInput(copilot)=== "Empty" || validateInput(fuelLevel)=== "Empty" ||
-         validateInput(cargoMass)=== "Empty")  {
+if (validateInput(pilotInput.value) === "Empty" || validateInput(copilotInput.value)=== "Empty" || validateInput(fuelLevelInput.value)=== "Empty" ||
+         validateInput(cargoMassInput.value)=== "Empty")  {
     alert("All fields must be filled.");
-} else if (validateInput(fuelLevel) === "Not a Number" || validateInput(cargoMass) === "Not a Number") {
+} else if (validateInput(fuelLevelInput.value) === "Not a Number" || validateInput(cargoMassInput.value) === "Not a Number") {
     alert ("Please enter a number");
 
 } else {
-    fuelLevel=Number(fuelLevel)
-    cargoMass=Number(cargoMass)
+    fuelLevel=Number(fuelLevelInput.value)
+    cargoMass=Number(cargoMassInput.value)
     pilotStatus.innerHTML - `Pilot ${pilot} is ready for launch`;
     copilotStatus.innerHTML - `Co-pilot ${copilot} is ready for launch`;
     list.style.visibility = "visible";

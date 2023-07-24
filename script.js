@@ -16,13 +16,8 @@ window.addEventListener("load", function () {
         addDestinationInfo(document, selectedPlanet.name, selectedPlanet.diameter, selectedPlanet.star, 
             selectedPlanet.distance, selectedPlanet.moons, selectedPlanet.image,);
 
-            // console.log(pilotInput.value)
     });
     
-    
-    
-    
-     
 
         formSubmission(document, list, pilotInput, copilotInput, fuelLevelInput, cargoMassInput);
     const list = document.getElementById("faultyItems");

@@ -24,18 +24,19 @@ function validateInput(testInput) {
     }
 }
 // formSubmission function here - requirements say template literals so BE SURE TO USE BACKTICKS not regular
-function formSubmission(document, list, pilot, copilot, fuelLevel, cargoMass) {
+formSubmission(document, faultyItems, pilotName, copilotName, fuelLevel, cargoMass) {
    
     const pilotStatus = document.getElementById("pilotStatus");
     const copilotStatus = document.getElementById("copilotStatus");
     const fuelStatus = document.getElementById("fuelStatus");
     const cargoStatus = document.getElementById("cargoStatus");
-    const launchStatus = document.getElementById("launchStatus");
+    // const launchStatus = document.getElementById("launchStatus");
 
-if (validateInput(pilot) === "Empty" || validateInput(copilot)=== "Empty" || validateInput(fuelLevel)=== "Empty" ||
-         validateInput(cargoMass)=== "Empty")  {
-    alert("All fields must be filled.");
-} else if (validateInput(fuelLevel) === "Not a Number" || validateInput(cargoMass) === "Not a Number") {
+if (validateInput(pilotName.value) === "Empty" || validateInput(copilotName.value) === "Empty" || validateInput(fuelLevel.value) === "Empty" ||
+         validateInput(cargoMass.value) === "Empty")  {
+    alert("All fields are required filled!");
+    formSubmission();
+} if (validateInput(fuelLevel) === "Not a Number" || validateInput(cargoMass) === "Not a Number") {
     alert ("Please enter a number");
 
 } else {

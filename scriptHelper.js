@@ -1,5 +1,5 @@
 // Write your helper functions here!
-
+ 
 // ok start with validate input function - trim spaces (cause it is helpful) and use code in file/here
 function validateInput(testInput) {
     if (testInput === "") {

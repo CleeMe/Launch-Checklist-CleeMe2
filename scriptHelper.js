@@ -41,12 +41,12 @@ if (validateInput(pilot) === "Empty" || validateInput(copilot)=== "Empty" || val
     }
 
     if (cargoMass > 10000) {
-        cargoMass.innerHTML = "Cargo Mass too heavy for launch";
+        cargoStatus.innerHTML = "Cargo Mass too heavy for launch";
        
         launchStatus.innerHTML = "Shuttle Not Ready for Launch";
         launchStatus.style.color = "rgb(199, 37, 78)";
     } else {
-        cargoMass.innerHTML = "Cargo mass low enough for launch";
+        cargoStatus.innerHTML = "Cargo mass low enough for launch";
        
     }
 

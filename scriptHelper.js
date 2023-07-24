@@ -1,12 +1,25 @@
 // Write your helper functions here!
- 
+function addDestinationInfo(document, name, diameter, star, distance, moons, image) {
+    const missionTarget = document.getElementById("missionTarget");
+    missionTarget.innerHTML = `
+                <h2>Mission Destination</h2>
+                <ol>
+                    <li>Name: ${name}</li>
+                    <li>Diameter: ${diameter}</li>
+                    <li>Star: ${star}</li>
+                    <li>Distance from Earth: ${distance}</li>
+                    <li>Number of Moons: ${moons}</li>
+                </ol>
+                <img src="${image}">
+                `;
+}
 // ok start with validate input function - trim spaces (cause it is helpful) and use code in file/here
 function validateInput(testInput) {
     if (testInput === "") {
         return "Empty";
-    } else if (isNaN(testInput)) {
+    } if (isNaN(testInput)) {
         return "Not a Number";
-    } else {
+    } if (isNaN(testInput)=== false) {
         return "Is a Number";
     }
 }
@@ -69,20 +82,7 @@ function pickPlanet(planets) {
     return planets[index];
 }
 
-function addDestinationInfo(document, name, diameter, star, distance, moons, imageUrl) {
-    const missionTargetDiv = document.getElementById("missionTarget");
-    missionTargetDiv.innerHTML = `
-                <h2>Mission Destination</h2>
-                <ol>
-                    <li>Name: ${name}</li>
-                    <li>Diameter: ${diameter}</li>
-                    <li>Star: ${star}</li>
-                    <li>Distance from Earth: ${distance}</li>
-                    <li>Number of Moons: ${moons}</li>
-                </ol>
-                <img src="${imageUrl}" alt="${name}">
-                `;
-}
+
 
 
 module.exports.addDestinationInfo = addDestinationInfo;
